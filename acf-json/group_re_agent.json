@@ -1,0 +1,67 @@
+{
+	"key": "group_re_agent",
+	"title": "Agent Details",
+	"fields": [
+		{
+			"key": "field_re_agent_role",
+			"label": "Role / Title",
+			"name": "role",
+			"type": "text",
+			"instructions": "e.g. Senior Real Estate Advisor"
+		},
+		{
+			"key": "field_re_agent_phone",
+			"label": "Phone",
+			"name": "phone",
+			"type": "text"
+		},
+		{
+			"key": "field_re_agent_whatsapp",
+			"label": "WhatsApp",
+			"name": "whatsapp",
+			"type": "text",
+			"instructions": "Number in international format, digits only (e.g. 15551234567)."
+		},
+		{
+			"key": "field_re_agent_email",
+			"label": "Email",
+			"name": "email",
+			"type": "email"
+		},
+		{
+			"key": "field_re_agent_bio",
+			"label": "Biography",
+			"name": "bio",
+			"type": "wysiwyg",
+			"tabs": "all",
+			"toolbar": "basic",
+			"media_upload": 0
+		},
+		{
+			"key": "field_re_agent_social",
+			"label": "Social Links",
+			"name": "social_links",
+			"type": "group",
+			"layout": "block",
+			"sub_fields": [
+				{ "key": "field_re_agent_fb", "label": "Facebook", "name": "facebook", "type": "url" },
+				{ "key": "field_re_agent_ig", "label": "Instagram", "name": "instagram", "type": "url" },
+				{ "key": "field_re_agent_li", "label": "LinkedIn", "name": "linkedin", "type": "url" },
+				{ "key": "field_re_agent_x", "label": "X (Twitter)", "name": "x", "type": "url" }
+			]
+		}
+	],
+	"location": [
+		[
+			{ "param": "post_type", "operator": "==", "value": "agent" }
+		]
+	],
+	"menu_order": 0,
+	"position": "acf_after_title",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"active": true,
+	"show_in_rest": 0,
+	"modified": 1752192000
+}

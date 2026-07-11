@@ -1,0 +1,28 @@
+@use '../tokens' as *;
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--re-space-2);
+  padding: var(--re-space-6) var(--re-space-5);
+  text-align: center;
+  align-items: center;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover { border-color: var(--re-primary); transform: translateY(-4px); }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: var(--re-radius-pill);
+    background: var(--re-elevated);
+    color: var(--re-primary);
+    margin-bottom: var(--re-space-2);
+    svg { width: 26px; height: 26px; }
+  }
+  &__name { font-weight: 600; }
+  &__count { color: var(--re-muted); font-size: 0.85rem; }
+}

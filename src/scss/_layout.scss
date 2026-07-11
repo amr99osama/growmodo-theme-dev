@@ -1,0 +1,58 @@
+@use 'tokens' as *;
+
+.container {
+  width: 100%;
+  max-width: var(--re-container);
+  margin-inline: auto;
+  padding-inline: var(--re-gutter);
+
+  &--narrow { max-width: 820px; }
+}
+
+// Vertical rhythm for full-width sections.
+.section {
+  padding-block: var(--re-section-y);
+}
+
+.section--tight { padding-block: calc(var(--re-section-y) * 0.6); }
+
+// Section heading block (eyebrow + title + optional subcopy).
+.section-head {
+  max-width: 720px;
+  margin-bottom: var(--re-space-7);
+
+  &--center {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  p { color: var(--re-muted); margin: 0; }
+}
+
+// Responsive auto-fit card grid used by property/agent/post grids.
+.grid {
+  display: grid;
+  gap: var(--re-space-5);
+}
+
+.grid--cards {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.grid--3 {
+  grid-template-columns: 1fr;
+  @include bp(tablet) { grid-template-columns: repeat(2, 1fr); }
+  @include bp(desktop) { grid-template-columns: repeat(3, 1fr); }
+}
+
+.grid--4 {
+  grid-template-columns: repeat(2, 1fr);
+  @include bp(desktop) { grid-template-columns: repeat(4, 1fr); }
+}
+
+// Utility surface panel.
+.surface {
+  background: var(--re-surface);
+  border: 1px solid var(--re-border);
+  border-radius: var(--re-radius);
+}

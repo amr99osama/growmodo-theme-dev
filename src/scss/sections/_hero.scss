@@ -1,0 +1,259 @@
+@use '../tokens' as *;
+
+.hero { background: var(--re-bg); }
+
+// ── Top area (mobile: image on top, then content) ───────────────────────────
+.hero__top {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__media {
+  order: -1;                       // image first on mobile
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--re-surface);
+  margin: 0 var(--re-gutter);      // inset to page gutter on mobile
+
+  img { width: 100%; height: 300px; object-fit: cover; object-position: center; display: block; }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(233.7deg, rgba(42, 33, 63, 0.85) 8.76%, rgba(25, 25, 25, 0) 50%);
+    pointer-events: none;
+  }
+}
+
+.hero__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 24px var(--re-gutter);
+  z-index: 2;
+}
+
+.hero__text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero__title {
+  margin: 0;
+  font-weight: 600;                              // Urbanist SemiBold
+  font-size: clamp(1.75rem, 6vw, 3.75rem);       // 28 → 60px
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--re-text);
+}
+
+.hero__subcopy {
+  margin: 0;
+  max-width: 640px;
+  color: var(--re-muted);
+  font-size: 0.875rem;                           // 14px mobile
+  line-height: 1.5;
+  @include bp(tablet) { font-size: 1.125rem; }   // 18px desktop
+}
+
+.hero__badge { display: none; }                  // decorative — desktop only
+
+.hero__actions {
+  display: flex;
+  flex-direction: column;                        // stacked full-width on mobile
+  gap: 16px;
+
+  .btn { width: 100%; font-size: 0.875rem; padding: 14px 20px; border-radius: 8px; }
+
+  @include bp(tablet) {
+    flex-direction: row;
+    .btn { width: auto; font-size: 1.125rem; padding: 18px 24px; border-radius: 10px; }
+  }
+}
+
+// ── Stats (mobile: 2-col + full-width 3rd, centered) ────────────────────────
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include bp(tablet) { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+}
+
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 16px;
+  background: var(--re-surface);
+  border: 1px solid var(--re-border);
+  border-radius: 8px;
+  align-items: center;
+  text-align: center;
+
+  &:nth-child(3) { grid-column: 1 / -1; }        // "16+" spans full width on mobile
+
+  @include bp(tablet) {
+    padding: 16px 24px;
+    border-radius: 12px;
+    align-items: flex-start;
+    text-align: left;
+    &:nth-child(3) { grid-column: auto; }
+  }
+}
+
+.hero__stat-value { font-weight: 700; font-size: 1.5rem; color: var(--re-text); line-height: 1.2; @include bp(tablet) { font-size: 2.5rem; } }
+.hero__stat-label { font-weight: 500; font-size: 0.875rem; color: var(--re-muted); @include bp(tablet) { font-size: 1.125rem; } }
+
+// ── Value-prop strip (bordered card + shadow ring) ──────────────────────────
+.hero__valueprops {
+  padding: 0 var(--re-gutter) 8px;
+  @include bp(desktop) { padding-inline: max(var(--re-gutter), calc((100vw - var(--re-container)) / 2)); }
+}
+
+.hero__vp-strip {
+  background: var(--re-bg);
+  border: 1px solid var(--re-border);
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 0 0 4px #191919;
+  @include bp(tablet) { padding: 20px; box-shadow: 0 0 0 10px #191919; }
+}
+
+.hero__vp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);         // mobile 2×2
+  gap: 10px;
+  align-items: stretch;
+  @include bp(tablet) { gap: 20px; }
+  @include bp(desktop) { grid-template-columns: repeat(4, 1fr); }
+}
+
+.hero__vp {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-width: 0;
+  min-height: 178px;
+  padding: 20px 14px;
+  text-align: center;
+  overflow: hidden;
+  background: var(--re-surface);
+  border: 1px solid var(--re-border);
+  border-radius: 10px;
+
+  @include bp(tablet) { gap: 20px; min-height: 224px; padding: 40px 20px; }
+}
+
+.hero__vp-icon {
+  display: block;
+  width: 84px;
+  height: 84px;
+  max-width: 100%;
+  flex: none;
+  object-fit: contain;
+  color: var(--re-primary-hover);
+}
+
+.hero__vp-title {
+  max-width: 100%;
+  margin: 0;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--re-text);
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+  @include bp(tablet) { font-size: 1.25rem; }
+}
+
+.hero__vp-arrow {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  color: var(--re-muted);
+  svg { width: 22px; height: 22px; }
+  @include bp(tablet) { top: 19px; right: 19px; svg { width: 26px; height: 26px; } }
+}
+
+// ── Desktop: two-column top ─────────────────────────────────────────────────
+@include bp(desktop) {
+  .hero__top { flex-direction: row; align-items: stretch; }
+
+  .hero__media {
+    order: 0;
+    flex: 1 1 50%;
+    margin: 0;
+    border-radius: 0;
+    z-index: 1;
+    img { height: 100%; min-height: 660px; }
+  }
+
+  .hero__content {
+    flex: 1 1 50%;
+    justify-content: center;
+    gap: 48px;
+    padding: 80px 60px 80px max(var(--re-gutter), calc((100vw - var(--re-container)) / 2));
+  }
+  .hero__text { gap: 24px; }
+
+  .hero__badge {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 0;
+    right: clamp(-159px, -8.3vw, -72px);
+    width: 175px;
+    height: 175px;
+    border: 1px solid var(--re-border);
+    border-radius: 50%;
+    background: var(--re-bg);
+    z-index: 2;
+    pointer-events: none;
+  }
+  .hero__badge-ring {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    animation: re-badge-spin 20s linear infinite;
+    text { fill: var(--re-text); font-family: var(--re-font-sans); font-size: 14px; font-weight: 600; letter-spacing: 3px; }
+  }
+  .hero__badge-arrow {
+    display: grid;
+    place-items: center;
+    width: 80px;
+    height: 80px;
+    border: 1px solid var(--re-border);
+    border-radius: 50%;
+    background: var(--re-surface);
+    color: var(--re-text);
+    svg { width: 34px; height: 34px; stroke-width: 1.4; }
+  }
+  .hero__badge-spark {
+    position: absolute;
+    display: block;
+    left: 87px;
+    bottom: 19px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__badge-ring { animation: none; }
+}
+
+@keyframes re-badge-spin { to { transform: rotate(360deg); } }

@@ -1,0 +1,22 @@
+@use '../tokens' as *;
+
+.agent-card {
+  overflow: hidden;
+  text-align: center;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover { border-color: var(--re-primary); transform: translateY(-4px); }
+
+  &__media {
+    display: block;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    img { width: 100%; height: 100%; object-fit: cover; }
+  }
+
+  &__body { padding: var(--re-space-5); }
+  &__name { font-size: 1.15rem; margin-bottom: 2px; }
+  &__name a:hover { color: var(--re-primary); }
+  &__role { color: var(--re-muted); font-size: 0.9rem; margin-bottom: var(--re-space-3); }
+  &__social { justify-content: center; }
+}

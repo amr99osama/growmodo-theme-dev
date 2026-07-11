@@ -1,0 +1,30 @@
+@use '../tokens' as *;
+
+.about {
+  &__inner {
+    display: grid;
+    gap: var(--re-space-7);
+    align-items: center;
+    grid-template-columns: 1fr;
+    @include bp(tablet) { grid-template-columns: 1fr 1fr; gap: var(--re-space-8); }
+  }
+  &__media img { width: 100%; border-radius: var(--re-radius-lg); box-shadow: var(--re-shadow); }
+  &__title { margin-bottom: var(--re-space-4); }
+  &__body { color: var(--re-muted); margin-bottom: var(--re-space-5); }
+
+  &__features { display: grid; gap: var(--re-space-4); }
+  &__feature { display: flex; gap: var(--re-space-3); }
+  &__feature-icon {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px; height: 36px;
+    border-radius: var(--re-radius-pill);
+    background: color-mix(in srgb, var(--re-primary) 18%, transparent);
+    color: var(--re-primary);
+    svg { width: 18px; height: 18px; }
+  }
+  &__feature-title { font-size: 1.05rem; margin-bottom: 2px; }
+  &__feature p { color: var(--re-muted); margin: 0; font-size: 0.925rem; }
+}

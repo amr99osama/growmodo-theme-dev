@@ -1,0 +1,32 @@
+@use 'tokens' as *;
+
+.archive-filters {
+  display: grid;
+  gap: var(--re-space-3);
+  padding: var(--re-space-4);
+  margin-bottom: var(--re-space-6);
+  grid-template-columns: 1fr;
+  @include bp(mobile) { grid-template-columns: repeat(2, 1fr); }
+  @include bp(tablet) { grid-template-columns: repeat(5, 1fr) auto; align-items: center; }
+
+  select,
+  input {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    background: var(--re-elevated);
+    color: var(--re-text);
+    border: 1px solid var(--re-border);
+    border-radius: var(--re-radius-sm);
+  }
+}
+
+.archive-results__count { color: var(--re-muted); margin-bottom: var(--re-space-5); }
+
+.archive-empty {
+  padding: var(--re-space-8) var(--re-space-5);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--re-space-4);
+}

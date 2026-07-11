@@ -1,0 +1,54 @@
+@use 'tokens' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--re-space-2);
+  padding: 1rem 1.5rem;          // 16px 24px  /* CALIBRATE per context */
+  border: 1px solid transparent;
+  border-radius: 10px;           // Figma buttons use 10px, not pill
+  font-family: var(--re-font-sans);
+  font-weight: 500;              // Urbanist Medium
+  font-size: 1.125rem;           // 18px
+  line-height: 1.5;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+
+  &:active { transform: translateY(1px); }
+
+  svg { width: 1.1em; height: 1.1em; }
+}
+
+.btn--primary {
+  background: var(--re-primary);
+  color: var(--re-primary-contrast);
+
+  &:hover { background: var(--re-primary-hover); }
+}
+
+// Dark button — Figma #141414 fill, #262626 hairline (Contact Us, secondary CTAs, "View All").
+.btn--dark {
+  background: var(--re-bg);
+  color: var(--re-text);
+  border-color: var(--re-border);
+
+  &:hover { border-color: var(--re-primary); }
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--re-text);
+  border-color: var(--re-border);
+
+  &:hover { border-color: var(--re-primary); color: var(--re-primary); }
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--re-text);
+
+  &:hover { color: var(--re-primary); }
+}
+
+.btn--block { width: 100%; }

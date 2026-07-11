@@ -1,0 +1,20 @@
+@use '../tokens' as *;
+
+// FAQ reuses shared .re-sec-head-row / .re-carousel / .re-pager (see _featured.scss).
+.re-faq { background: var(--re-bg); }
+
+.faq-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 30px;
+  background: var(--re-bg);
+  border: 1px solid var(--re-border);
+  border-radius: 12px;
+
+  @include bp(tablet) { gap: 30px; padding: 50px; }
+
+  &__q { margin: 0; font-weight: 600; font-size: 1.5rem; line-height: 1.5; color: var(--re-text); }
+  &__a { margin: 0; color: var(--re-muted); font-size: 1.125rem; line-height: 1.5; flex: 1 1 auto; }
+  &__more { align-self: flex-start; }
+}

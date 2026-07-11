@@ -1,0 +1,27 @@
+@use '../tokens' as *;
+
+.re-cta {
+  border-top: 1px solid var(--re-border);
+  border-bottom: 1px solid var(--re-border);
+  background: var(--re-bg);
+}
+
+.re-cta__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-block: 60px;
+
+  @include bp(desktop) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+    padding-block: 100px;
+  }
+}
+
+.re-cta__text { display: flex; flex-direction: column; gap: 14px; max-width: 900px; }
+.re-cta__title { margin: 0; font-weight: 600; font-size: clamp(1.75rem, 5vw, 3rem); line-height: 1.2; color: var(--re-text); }
+.re-cta__subcopy { margin: 0; color: var(--re-muted); font-size: 1.125rem; line-height: 1.5; }
+.re-cta__btn { align-self: flex-start; white-space: nowrap; @include bp(desktop) { align-self: auto; } }

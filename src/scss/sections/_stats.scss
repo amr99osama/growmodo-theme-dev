@@ -1,0 +1,18 @@
+@use '../tokens' as *;
+
+.stats {
+  &__heading { text-align: center; margin-bottom: var(--re-space-6); }
+  &__grid {
+    display: grid;
+    gap: var(--re-space-5);
+    grid-template-columns: repeat(2, 1fr);
+    @include bp(tablet) { grid-template-columns: repeat(4, 1fr); }
+    padding: var(--re-space-6);
+    background: var(--re-surface);
+    border: 1px solid var(--re-border);
+    border-radius: var(--re-radius-lg);
+  }
+  &__item { text-align: center; }
+  &__value { display: block; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--re-primary); }
+  &__label { color: var(--re-muted); }
+}

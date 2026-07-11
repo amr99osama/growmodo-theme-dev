@@ -1,0 +1,5 @@
+@use '../tokens' as *;
+
+// Testimonials reuses the shared .re-sec-head-row / .re-carousel / .re-pager
+// patterns defined in sections/_featured.scss. No section-specific overrides needed.
+.re-testimonials { background: var(--re-bg); }

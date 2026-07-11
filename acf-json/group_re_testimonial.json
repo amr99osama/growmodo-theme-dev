@@ -1,0 +1,60 @@
+{
+	"key": "group_re_testimonial",
+	"title": "Testimonial Details",
+	"fields": [
+		{
+			"key": "field_re_tm_quote",
+			"label": "Quote",
+			"name": "quote",
+			"type": "textarea",
+			"rows": 4,
+			"new_lines": "br"
+		},
+		{
+			"key": "field_re_tm_author",
+			"label": "Author Name",
+			"name": "author_name",
+			"type": "text"
+		},
+		{
+			"key": "field_re_tm_role",
+			"label": "Author Role / Location",
+			"name": "author_role",
+			"type": "text",
+			"instructions": "e.g. Homeowner, New York"
+		},
+		{
+			"key": "field_re_tm_rating",
+			"label": "Rating",
+			"name": "rating",
+			"type": "number",
+			"min": 1,
+			"max": 5,
+			"step": 1,
+			"default_value": 5
+		},
+		{
+			"key": "field_re_tm_avatar",
+			"label": "Avatar",
+			"name": "avatar",
+			"type": "image",
+			"instructions": "Optional. Falls back to the Featured Image.",
+			"return_format": "array",
+			"preview_size": "thumbnail",
+			"library": "all"
+		}
+	],
+	"location": [
+		[
+			{ "param": "post_type", "operator": "==", "value": "testimonial" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"active": true,
+	"show_in_rest": 0,
+	"modified": 1752192000
+}

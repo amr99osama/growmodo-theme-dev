@@ -1,0 +1,136 @@
+{
+	"key": "group_re_site_settings",
+	"title": "Site Settings",
+	"fields": [
+		{
+			"key": "field_re_ss_tab_brand",
+			"label": "Brand & Header",
+			"name": "",
+			"type": "tab",
+			"placement": "top"
+		},
+		{
+			"key": "field_re_site_logo",
+			"label": "Site Logo",
+			"name": "site_logo",
+			"type": "image",
+			"instructions": "Header/footer logo (SVG or PNG). Leave empty to use the site title.",
+			"return_format": "array",
+			"preview_size": "medium",
+			"library": "all",
+			"mime_types": "svg,png,webp,jpg,jpeg"
+		},
+		{
+			"key": "field_re_header_cta",
+			"label": "Header Button",
+			"name": "header_cta",
+			"type": "link",
+			"instructions": "Primary call-to-action button in the header.",
+			"return_format": "array"
+		},
+		{
+			"key": "field_re_ss_tab_contact",
+			"label": "Contact",
+			"name": "",
+			"type": "tab",
+			"placement": "top"
+		},
+		{
+			"key": "field_re_contact_phone",
+			"label": "Phone",
+			"name": "contact_phone",
+			"type": "text"
+		},
+		{
+			"key": "field_re_contact_email",
+			"label": "Email",
+			"name": "contact_email",
+			"type": "email"
+		},
+		{
+			"key": "field_re_contact_address",
+			"label": "Address",
+			"name": "contact_address",
+			"type": "textarea",
+			"rows": 3,
+			"new_lines": "br"
+		},
+		{
+			"key": "field_re_office_hours",
+			"label": "Office Hours",
+			"name": "office_hours",
+			"type": "text"
+		},
+		{
+			"key": "field_re_map_embed",
+			"label": "Map Embed",
+			"name": "map_embed",
+			"type": "textarea",
+			"instructions": "Paste a Google Maps <iframe> embed for the contact section.",
+			"rows": 3
+		},
+		{
+			"key": "field_re_ss_tab_social",
+			"label": "Social",
+			"name": "",
+			"type": "tab",
+			"placement": "top"
+		},
+		{
+			"key": "field_re_social_links",
+			"label": "Social Links",
+			"name": "social_links",
+			"type": "group",
+			"layout": "block",
+			"sub_fields": [
+				{ "key": "field_re_social_facebook", "label": "Facebook", "name": "facebook", "type": "url" },
+				{ "key": "field_re_social_instagram", "label": "Instagram", "name": "instagram", "type": "url" },
+				{ "key": "field_re_social_linkedin", "label": "LinkedIn", "name": "linkedin", "type": "url" },
+				{ "key": "field_re_social_x", "label": "X (Twitter)", "name": "x", "type": "url" }
+			]
+		},
+		{
+			"key": "field_re_ss_tab_footer",
+			"label": "Footer",
+			"name": "",
+			"type": "tab",
+			"placement": "top"
+		},
+		{
+			"key": "field_re_footer_about",
+			"label": "Footer About Text",
+			"name": "footer_about",
+			"type": "textarea",
+			"rows": 4,
+			"new_lines": "wpautop"
+		},
+		{
+			"key": "field_re_footer_links_heading",
+			"label": "Footer Links Heading",
+			"name": "footer_links_heading",
+			"type": "text",
+			"default_value": "Quick Links"
+		},
+		{
+			"key": "field_re_footer_copyright",
+			"label": "Copyright Text",
+			"name": "footer_copyright",
+			"type": "text",
+			"instructions": "Use {year} to insert the current year automatically."
+		}
+	],
+	"location": [
+		[
+			{ "param": "page_template", "operator": "==", "value": "page-site-settings.php" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": ["the_content", "excerpt", "discussion", "comments", "featured_image", "author"],
+	"active": true,
+	"show_in_rest": 0,
+	"modified": 1752192000
+}

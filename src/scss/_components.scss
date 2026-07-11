@@ -1,0 +1,59 @@
+@use 'tokens' as *;
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  &:focus { left: var(--re-gutter); top: 8px; z-index: var(--re-z-modal); background: var(--re-primary); color: var(--re-primary-contrast); padding: 8px 16px; border-radius: var(--re-radius-sm); }
+}
+
+.pagination {
+  margin-top: var(--re-space-7);
+  &__list { display: flex; flex-wrap: wrap; gap: var(--re-space-2); justify-content: center; list-style: none; padding: 0; margin: 0; }
+  .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid var(--re-border);
+    border-radius: var(--re-radius-sm);
+    color: var(--re-muted);
+    &:hover { border-color: var(--re-primary); color: var(--re-text); }
+    &.current { background: var(--re-primary); border-color: var(--re-primary); color: var(--re-primary-contrast); }
+  }
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  color: var(--re-muted);
+  font-size: 0.875rem;
+  margin-bottom: var(--re-space-5);
+  a:hover { color: var(--re-primary); }
+  &__sep { color: var(--re-faint); }
+}
+
+.page-hero {
+  padding-block: var(--re-space-8) var(--re-space-6);
+  border-bottom: 1px solid var(--re-border);
+  &__title { margin-bottom: var(--re-space-2); }
+}
+
+// Scroll-reveal (class applied by reveal.js; no-JS shows content normally).
+.re-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+.re-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .re-reveal { opacity: 1; transform: none; transition: none; }
+}

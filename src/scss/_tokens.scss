@@ -1,0 +1,96 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// DESIGN TOKENS
+// PLACEHOLDER VALUES — replace every value below with the exact Figma variables
+// (node 46-304 and siblings) once Figma Dev Mode / MCP is authorized.
+// Colors approximate a dark real-estate template; do NOT treat as final.
+// ─────────────────────────────────────────────────────────────────────────────
+
+:root {
+  // Surfaces (Figma greys — CONFIRMED)
+  --re-bg:        #141414; // Grey/08  page background
+  --re-surface:   #1A1A1A; // Grey/10  card / panel background
+  --re-elevated:  #262626; // Grey/15  elevated panel
+  --re-border:    #262626; // Grey/15  hairline borders
+  --re-border-2:  #333333; // Grey/20  divider / stronger border
+
+  // Text (Figma — CONFIRMED)
+  --re-text:      #FFFFFF; // White    primary text
+  --re-muted:     #999999; // Grey/60  secondary text
+  --re-faint:     #666666; // Grey/40  tertiary / disabled
+
+  // Brand / accent (Figma purple — CONFIRMED)
+  --re-primary:        #703BF7; // Purple/60
+  --re-primary-hover:  #A685FA; // Purple/75
+  --re-primary-contrast:#FFFFFF;
+  --re-accent:         #A685FA; // Purple/75
+
+  // Status
+  --re-success: #2fbf71;
+  --re-warning: #e6a23c;
+  --re-danger:  #e05260;
+
+  // Radii
+  --re-radius-sm: 8px;
+  --re-radius:    14px;
+  --re-radius-lg: 22px;
+  --re-radius-pill: 999px;
+
+  // Shadows
+  --re-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --re-shadow:    0 20px 40px rgba(0, 0, 0, 0.35);
+
+  // Spacing scale (4pt base) ← align to Figma spacing tokens
+  --re-space-1: 4px;
+  --re-space-2: 8px;
+  --re-space-3: 12px;
+  --re-space-4: 16px;
+  --re-space-5: 24px;
+  --re-space-6: 32px;
+  --re-space-7: 48px;
+  --re-space-8: 64px;
+  --re-space-9: 96px;
+  --re-space-10: 128px;
+
+  // Layout
+  --re-container: 1600px; // Figma: 1920 frame − 2×160px padding = 1600 content /* CALIBRATE */
+  --re-gutter: 24px;
+  --re-section-y: clamp(48px, 8vw, 112px); // vertical section rhythm
+
+  // Typography families ← replace with the Figma font families
+  --re-font-sans: 'Urbanist', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --re-font-display: 'Urbanist', system-ui, sans-serif;
+
+  // Z-index scale
+  --re-z-header: 100;
+  --re-z-overlay: 200;
+  --re-z-modal: 300;
+}
+
+// SCSS-side tokens (compile-time) for media queries & mixins.
+$bp-mobile: 600px;
+$bp-tablet: 900px;
+$bp-desktop: 1240px;
+
+// Min-width media query helper: @include bp(tablet) { … }
+@mixin bp($name) {
+  @if $name == mobile {
+    @media (min-width: $bp-mobile) { @content; }
+  } @else if $name == tablet {
+    @media (min-width: $bp-tablet) { @content; }
+  } @else if $name == desktop {
+    @media (min-width: $bp-desktop) { @content; }
+  } @else {
+    @media (min-width: $name) { @content; }
+  }
+}
+
+// Max-width helper for mobile-down overrides: @include bp-down(tablet) { … }
+@mixin bp-down($name) {
+  @if $name == mobile {
+    @media (max-width: $bp-mobile - 1px) { @content; }
+  } @else if $name == tablet {
+    @media (max-width: $bp-tablet - 1px) { @content; }
+  } @else {
+    @media (max-width: $name) { @content; }
+  }
+}

@@ -1,0 +1,21 @@
+# Dependencies (rebuild with `npm install`)
+/node_modules/
+/vendor/
+
+# Docs, plans, references, audits, dev tooling — not part of the shipped theme
+/docs/
+*.md
+
+# Figma raw exports (source material, not runtime assets)
+/assets/figma-export/
+
+# Env / logs / editor cruft
+.env
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.phpunit.result.cache
+
+# Note: /dist (built CSS/JS) is intentionally committed so the theme renders on clone.

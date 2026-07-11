@@ -1,0 +1,63 @@
+@use '../tokens' as *;
+
+.property-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  background: var(--re-bg);              // #141414 (border defines the card)
+  border: 1px solid var(--re-border);
+  border-radius: 12px;
+  transition: border-color 0.2s ease;
+
+  &:hover { border-color: var(--re-primary); }
+
+  @include bp(tablet) { gap: 30px; padding: 40px; }
+
+  &__media {
+    display: block;
+    height: 220px;
+    border-radius: 10px;
+    overflow: hidden;
+    @include bp(tablet) { height: 318px; }
+
+    img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+  }
+  &:hover &__media img { transform: scale(1.04); }
+
+  &__body { display: flex; flex-direction: column; gap: 24px; @include bp(tablet) { gap: 30px; } }
+  &__text { display: flex; flex-direction: column; gap: 6px; }
+
+  &__title { margin: 0; font-weight: 600; font-size: 1.5rem; line-height: 1.5; color: var(--re-text); }
+  &__title a:hover { color: var(--re-primary); }
+
+  &__desc { margin: 0; color: var(--re-muted); font-size: 1.125rem; line-height: 1.5; }
+  &__more { color: var(--re-text); text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
+  &__more:hover { color: var(--re-primary); }
+
+  &__tags { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+  &__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 14px;
+    background: var(--re-surface);       // #1A1A1A
+    border: 1px solid var(--re-border);
+    border-radius: 28px;
+    color: var(--re-text);
+    font-size: 0.9375rem;
+    svg { width: 20px; height: 20px; color: var(--re-text); flex: none; }
+  }
+
+  &__foot {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  &__price { display: flex; flex-direction: column; gap: 2px; }
+  &__price-label { color: var(--re-muted); font-size: 1.125rem; }
+  &__price-value { color: var(--re-text); font-weight: 600; font-size: 1.5rem; }
+  &__cta { flex: 1 1 auto; white-space: nowrap; text-align: center; }
+}

@@ -1,0 +1,13 @@
+@use '../tokens' as *;
+
+.agents__head,
+.blog-teaser__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--re-space-4);
+  margin-bottom: var(--re-space-7);
+
+  .section-head { margin-bottom: 0; }
+}

@@ -1,0 +1,352 @@
+{
+	"key": "group_re_property",
+	"title": "Property Details",
+	"fields": [
+		{
+			"key": "field_re_prop_tab_overview",
+			"label": "Overview",
+			"name": "",
+			"type": "tab",
+			"placement": "top"
+		},
+		{
+			"key": "field_re_price",
+			"label": "Price",
+			"name": "price",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"prepend": "$"
+		},
+		{
+			"key": "field_re_price_period",
+			"label": "Price Period",
+			"name": "price_period",
+			"type": "select",
+			"choices": { "": "One-time", "mo": "per month", "yr": "per year" },
+			"default_value": "",
+			"return_format": "value",
+			"allow_null": 0,
+			"ui": 0
+		},
+		{
+			"key": "field_re_bedrooms",
+			"label": "Bedrooms",
+			"name": "bedrooms",
+			"type": "number",
+			"min": 0,
+			"step": 1
+		},
+		{
+			"key": "field_re_bathrooms",
+			"label": "Bathrooms",
+			"name": "bathrooms",
+			"type": "number",
+			"min": 0,
+			"step": 1
+		},
+		{
+			"key": "field_re_area_sqft",
+			"label": "Area (sqft)",
+			"name": "area_sqft",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"append": "sqft"
+		},
+		{
+			"key": "field_re_garage",
+			"label": "Garage / Parking",
+			"name": "garage",
+			"type": "number",
+			"min": 0,
+			"step": 1
+		},
+		{
+			"key": "field_re_year_built",
+			"label": "Year Built",
+			"name": "year_built",
+			"type": "number",
+			"min": 0,
+			"step": 1
+		},
+		{
+			"key": "field_re_prop_tab_location",
+			"label": "Location",
+			"name": "",
+			"type": "tab",
+			"placement": "top"
+		},
+		{
+			"key": "field_re_address",
+			"label": "Address",
+			"name": "address",
+			"type": "text",
+			"instructions": "Street address shown on the listing."
+		},
+		{
+			"key": "field_re_map_lat",
+			"label": "Map Latitude",
+			"name": "map_lat",
+			"type": "text",
+			"instructions": "Optional. Used with longitude to embed a map (no API key needed)."
+		},
+		{
+			"key": "field_re_map_lng",
+			"label": "Map Longitude",
+			"name": "map_lng",
+			"type": "text"
+		},
+		{
+			"key": "field_re_prop_tab_gallery",
+			"label": "Gallery",
+			"name": "",
+			"type": "tab",
+			"placement": "top"
+		},
+		{
+			"key": "field_re_gallery",
+			"label": "Gallery Images",
+			"name": "gallery",
+			"type": "group",
+			"instructions": "Fixed image slots. The Featured Image is the main photo. Use the unlimited field below for additional images.",
+			"layout": "block",
+			"sub_fields": [
+				{ "key": "field_re_gallery_1", "label": "Image 1", "name": "image_1", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all" },
+				{ "key": "field_re_gallery_2", "label": "Image 2", "name": "image_2", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all" },
+				{ "key": "field_re_gallery_3", "label": "Image 3", "name": "image_3", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all" },
+				{ "key": "field_re_gallery_4", "label": "Image 4", "name": "image_4", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all" },
+				{ "key": "field_re_gallery_5", "label": "Image 5", "name": "image_5", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all" },
+				{ "key": "field_re_gallery_6", "label": "Image 6", "name": "image_6", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all" },
+				{ "key": "field_re_gallery_7", "label": "Image 7", "name": "image_7", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all" },
+				{ "key": "field_re_gallery_8", "label": "Image 8", "name": "image_8", "type": "image", "return_format": "array", "preview_size": "medium", "library": "all" }
+			]
+		},
+		{
+			"key": "field_re_gallery_images_unlimited",
+			"label": "Unlimited Gallery Images",
+			"name": "gallery_images_unlimited",
+			"type": "textarea",
+			"instructions": "Optional. Add one attachment ID or image URL per line. These are appended to the gallery with no front-end image limit.",
+			"rows": 8,
+			"new_lines": ""
+		},
+		{
+			"key": "field_re_prop_tab_amenities",
+			"label": "Amenities",
+			"name": "",
+			"type": "tab",
+			"placement": "top"
+		},
+		{
+			"key": "field_re_amenities",
+			"label": "Amenities",
+			"name": "amenities",
+			"type": "group",
+			"layout": "block",
+			"sub_fields": [
+				{ "key": "field_re_am_ac", "label": "Air Conditioning", "name": "air_conditioning", "type": "true_false", "ui": 1 },
+				{ "key": "field_re_am_heating", "label": "Heating", "name": "heating", "type": "true_false", "ui": 1 },
+				{ "key": "field_re_am_pool", "label": "Swimming Pool", "name": "swimming_pool", "type": "true_false", "ui": 1 },
+				{ "key": "field_re_am_gym", "label": "Gym", "name": "gym", "type": "true_false", "ui": 1 },
+				{ "key": "field_re_am_parking", "label": "Parking", "name": "parking", "type": "true_false", "ui": 1 },
+				{ "key": "field_re_am_security", "label": "24/7 Security", "name": "security", "type": "true_false", "ui": 1 },
+				{ "key": "field_re_am_garden", "label": "Garden", "name": "garden", "type": "true_false", "ui": 1 },
+				{ "key": "field_re_am_balcony", "label": "Balcony", "name": "balcony", "type": "true_false", "ui": 1 },
+				{ "key": "field_re_am_elevator", "label": "Elevator", "name": "elevator", "type": "true_false", "ui": 1 },
+				{ "key": "field_re_am_furnished", "label": "Furnished", "name": "furnished", "type": "true_false", "ui": 1 },
+				{ "key": "field_re_am_pet", "label": "Pet Friendly", "name": "pet_friendly", "type": "true_false", "ui": 1 },
+				{ "key": "field_re_am_laundry", "label": "Laundry", "name": "laundry", "type": "true_false", "ui": 1 }
+			]
+		},
+		{
+			"key": "field_re_key_features",
+			"label": "Key Features",
+			"name": "key_features",
+			"type": "textarea",
+			"instructions": "One feature per line. Renders in the Figma Key Features and Amenities card.",
+			"rows": 6,
+			"new_lines": ""
+		},
+		{
+			"key": "field_re_prop_tab_pricing",
+			"label": "Pricing Details",
+			"name": "",
+			"type": "tab",
+			"placement": "top"
+		},
+		{
+			"key": "field_re_pricing_note",
+			"label": "Pricing Note",
+			"name": "pricing_note",
+			"type": "textarea",
+			"rows": 3,
+			"new_lines": ""
+		},
+		{
+			"key": "field_re_price_transfer_tax",
+			"label": "Property Transfer Tax",
+			"name": "price_transfer_tax",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"prepend": "$"
+		},
+		{
+			"key": "field_re_price_legal_fees",
+			"label": "Legal Fees",
+			"name": "price_legal_fees",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"prepend": "$"
+		},
+		{
+			"key": "field_re_price_home_inspection",
+			"label": "Home Inspection",
+			"name": "price_home_inspection",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"prepend": "$"
+		},
+		{
+			"key": "field_re_price_property_insurance_annual",
+			"label": "Annual Property Insurance",
+			"name": "price_property_insurance_annual",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"prepend": "$"
+		},
+		{
+			"key": "field_re_price_mortgage_fees",
+			"label": "Mortgage Fees",
+			"name": "price_mortgage_fees",
+			"type": "text"
+		},
+		{
+			"key": "field_re_price_monthly_taxes",
+			"label": "Monthly Property Taxes",
+			"name": "price_monthly_taxes",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"prepend": "$"
+		},
+		{
+			"key": "field_re_price_hoa_fee",
+			"label": "HOA Fee",
+			"name": "price_hoa_fee",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"prepend": "$"
+		},
+		{
+			"key": "field_re_price_additional_fees_total",
+			"label": "Additional Fees Total",
+			"name": "price_additional_fees_total",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"prepend": "$"
+		},
+		{
+			"key": "field_re_price_down_payment",
+			"label": "Down Payment",
+			"name": "price_down_payment",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"prepend": "$"
+		},
+		{
+			"key": "field_re_price_down_payment_note",
+			"label": "Down Payment Note",
+			"name": "price_down_payment_note",
+			"type": "text"
+		},
+		{
+			"key": "field_re_price_mortgage_amount",
+			"label": "Mortgage Amount",
+			"name": "price_mortgage_amount",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"prepend": "$"
+		},
+		{
+			"key": "field_re_price_mortgage_amount_note",
+			"label": "Mortgage Amount Note",
+			"name": "price_mortgage_amount_note",
+			"type": "text"
+		},
+		{
+			"key": "field_re_price_mortgage_payment",
+			"label": "Mortgage Payment",
+			"name": "price_mortgage_payment",
+			"type": "text"
+		},
+		{
+			"key": "field_re_price_mortgage_payment_note",
+			"label": "Mortgage Payment Note",
+			"name": "price_mortgage_payment_note",
+			"type": "text"
+		},
+		{
+			"key": "field_re_price_property_insurance_monthly",
+			"label": "Monthly Property Insurance",
+			"name": "price_property_insurance_monthly",
+			"type": "number",
+			"min": 0,
+			"step": "any",
+			"prepend": "$"
+		},
+		{
+			"key": "field_re_prop_tab_inquiry",
+			"label": "Inquiry",
+			"name": "",
+			"type": "tab",
+			"placement": "top"
+		},
+		{
+			"key": "field_re_inquiry_property_label",
+			"label": "Inquiry Selected Property Label",
+			"name": "inquiry_property_label",
+			"type": "text",
+			"instructions": "Shown in the selected property field of the Figma inquiry form."
+		},
+		{
+			"key": "field_re_prop_tab_agent",
+			"label": "Agent",
+			"name": "",
+			"type": "tab",
+			"placement": "top"
+		},
+		{
+			"key": "field_re_property_agent",
+			"label": "Listing Agent",
+			"name": "agent",
+			"type": "post_object",
+			"post_type": ["agent"],
+			"return_format": "id",
+			"ui": 1,
+			"allow_null": 1,
+			"multiple": 0
+		}
+	],
+	"location": [
+		[
+			{ "param": "post_type", "operator": "==", "value": "property" }
+		]
+	],
+	"menu_order": 0,
+	"position": "acf_after_title",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"active": true,
+	"show_in_rest": 0,
+	"modified": 1783790555
+}

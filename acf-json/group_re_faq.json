@@ -1,0 +1,27 @@
+{
+	"key": "group_re_faq",
+	"title": "FAQ Details",
+	"fields": [
+		{
+			"key": "field_re_faq_teaser",
+			"label": "Card Teaser",
+			"name": "answer_teaser",
+			"type": "textarea",
+			"rows": 2,
+			"instructions": "Short summary shown on the FAQ card. Falls back to a trimmed answer."
+		}
+	],
+	"location": [
+		[
+			{ "param": "post_type", "operator": "==", "value": "faq" }
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"active": true,
+	"show_in_rest": 0,
+	"modified": 1783728000
+}

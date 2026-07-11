@@ -1,0 +1,33 @@
+{
+  "assets/fonts/urbanist-400.woff2": {
+    "file": "assets/urbanist-400-ClbGNxcV.woff2",
+    "src": "assets/fonts/urbanist-400.woff2"
+  },
+  "assets/fonts/urbanist-500.woff2": {
+    "file": "assets/urbanist-500-CTXUkCRo.woff2",
+    "src": "assets/fonts/urbanist-500.woff2"
+  },
+  "assets/fonts/urbanist-600.woff2": {
+    "file": "assets/urbanist-600-BuXRW95m.woff2",
+    "src": "assets/fonts/urbanist-600.woff2"
+  },
+  "assets/fonts/urbanist-700.woff2": {
+    "file": "assets/urbanist-700-BtsT2zLv.woff2",
+    "src": "assets/fonts/urbanist-700.woff2"
+  },
+  "src/js/main.js": {
+    "file": "assets/main-B6G3y_BU.js",
+    "name": "main",
+    "src": "src/js/main.js",
+    "isEntry": true,
+    "css": [
+      "assets/main-BD-mcFZ3.css"
+    ],
+    "assets": [
+      "assets/urbanist-400-ClbGNxcV.woff2",
+      "assets/urbanist-500-CTXUkCRo.woff2",
+      "assets/urbanist-600-BuXRW95m.woff2",
+      "assets/urbanist-700-BtsT2zLv.woff2"
+    ]
+  }
+}

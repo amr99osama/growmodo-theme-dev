@@ -1,0 +1,45 @@
+@use '../tokens' as *;
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  background: var(--re-bg);
+  border: 1px solid var(--re-border);
+  border-radius: 12px;
+
+  @include bp(tablet) { gap: 40px; padding: 50px; }
+
+  &__stars { display: flex; gap: 10px; margin: 0; padding: 0; list-style: none; }
+  &__star {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--re-border-2);
+    background: #1f1f1f;
+    border: 1px solid var(--re-border);
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+
+    svg { width: 24px; height: 24px; fill: currentColor; stroke: none; }
+    @include bp(tablet) {
+      width: 44px;
+      height: 44px;
+      svg { width: 28px; height: 28px; }
+    }
+  }
+  &__star.is-on { color: #ffd600; }
+
+  &__text { display: flex; flex-direction: column; gap: 14px; }
+  &__title { margin: 0; font-weight: 600; font-size: 1.5rem; color: var(--re-text); }
+  &__quote { margin: 0; font-size: 1.125rem; line-height: 1.5; color: var(--re-text); }
+
+  &__author { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+  &__avatar { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; background: var(--re-surface); flex: none; }
+  &__meta { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  &__name { font-weight: 500; font-size: 1.25rem; color: var(--re-text); }
+  &__role { font-size: 1.125rem; color: var(--re-muted); }
+}

@@ -1,0 +1,11 @@
+// Self-hosted Urbanist (SIL OFL 1.1). Latin subset woff2, weights 400/500/600/700.
+// Vite fingerprints these into dist/assets/ and rewrites the URL with the configured base.
+@each $weight in (400, 500, 600, 700) {
+  @font-face {
+    font-family: 'Urbanist';
+    font-style: normal;
+    font-weight: $weight;
+    font-display: swap;
+    src: url('../../assets/fonts/urbanist-#{$weight}.woff2') format('woff2');
+  }
+}

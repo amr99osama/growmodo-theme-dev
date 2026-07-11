@@ -1,0 +1,22 @@
+@use '../tokens' as *;
+
+.service-card {
+  padding: var(--re-space-6) var(--re-space-5);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+
+  &:hover { border-color: var(--re-primary); transform: translateY(-4px); }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px; height: 52px;
+    border-radius: var(--re-radius);
+    background: var(--re-elevated);
+    color: var(--re-primary);
+    margin-bottom: var(--re-space-4);
+    svg { width: 24px; height: 24px; }
+  }
+  &__title { font-size: 1.15rem; margin-bottom: var(--re-space-2); }
+  &__text { color: var(--re-muted); margin: 0; font-size: 0.925rem; }
+}

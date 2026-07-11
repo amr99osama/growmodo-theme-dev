@@ -1,0 +1,19 @@
+@use 'tokens' as *;
+
+.single-agent {
+  padding-block: var(--re-space-6) var(--re-space-9);
+
+  &__header {
+    display: grid;
+    gap: var(--re-space-7);
+    grid-template-columns: 1fr;
+    margin-bottom: var(--re-space-7);
+    @include bp(tablet) { grid-template-columns: 320px 1fr; align-items: start; }
+  }
+  &__media img { width: 100%; border-radius: var(--re-radius-lg); object-fit: cover; aspect-ratio: 3 / 4; }
+  &__name { margin-bottom: 4px; }
+  &__role { color: var(--re-primary); font-weight: 600; margin-bottom: var(--re-space-4); }
+  &__bio { color: var(--re-muted); margin-bottom: var(--re-space-5); }
+  &__actions { display: flex; flex-wrap: wrap; gap: var(--re-space-3); margin-bottom: var(--re-space-4); }
+  &__listings h2 { margin-bottom: var(--re-space-5); }
+}

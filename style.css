@@ -1,0 +1,18 @@
+/*
+Theme Name: Real Estate
+Theme URI: http://localhost/real-estate
+Author: Amr Osama
+Author URI: http://localhost/real-estate
+Description: Pixel-perfect real estate theme converted from Figma (Dark Theme). Classic PHP + ACF (free) + Vite/SCSS. Repeatable content is driven by Custom Post Types; every design section maps to a template-part wired to an ACF field group.
+Version: 1.0.0
+Requires at least: 6.4
+Tested up to: 6.7
+Requires PHP: 8.1
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: realestate
+Tags: real-estate, dark, custom-colors, custom-menu, featured-images, translation-ready
+*/
+
+/* Runtime styles are built by Vite from src/scss and enqueued from dist/.
+   This file only carries the WordPress theme header above. */

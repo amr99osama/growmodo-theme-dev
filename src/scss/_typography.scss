@@ -1,0 +1,42 @@
+@use 'tokens' as *;
+
+// Type scale — Urbanist. Sizes/line-heights below are screenshot-derived estimates
+// /* CALIBRATE */ — replace with the exact Figma text-style ramp in Task 8 (Dev Mode).
+// Fluid headings use clamp(mobile, viewport, desktop).
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.5em;
+  font-family: var(--re-font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--re-text);
+}
+
+h1, .h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); }
+h2, .h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); }
+h3, .h3 { font-size: clamp(1.375rem, 2.5vw, 1.75rem); }
+h4, .h4 { font-size: 1.25rem; }
+h5, .h5 { font-size: 1.0625rem; }
+h6, .h6 { font-size: 0.9375rem; }
+
+p { margin: 0 0 1em; }
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--re-primary);
+}
+
+.lead {
+  font-size: 1.125rem;
+  color: var(--re-muted);
+}
+
+.text-muted { color: var(--re-muted); }
+.text-faint { color: var(--re-faint); }
+
+small, .text-sm { font-size: 0.875rem; }

@@ -1,0 +1,70 @@
+@use '../tokens' as *;
+
+// ── Shared section header (Featured / Testimonials / FAQ) ───────────────────
+.re-sec-head-row {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+
+  @include bp(desktop) {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 60px;
+    margin-bottom: 50px;
+  }
+}
+.re-sec-head { display: flex; flex-direction: column; gap: 14px; max-width: 760px; }
+.re-sec-head__title { margin: 0; font-weight: 600; font-size: clamp(1.75rem, 5vw, 3rem); line-height: 1.2; color: var(--re-text); }
+.re-sec-head__text { margin: 0; color: var(--re-muted); font-size: 1.125rem; line-height: 1.5; }
+.re-sec-head__action { align-self: flex-start; white-space: nowrap; @include bp(desktop) { align-self: auto; } }
+
+// ── Shared card carousel (mobile scroll-snap → 3-up desktop grid) ────────────
+.re-carousel {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 86%;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+
+  &::-webkit-scrollbar { display: none; }
+  > * { scroll-snap-align: start; }
+
+  @include bp(tablet) { grid-auto-columns: 46%; gap: 30px; }
+  @include bp(desktop) { grid-auto-columns: calc((100% - 60px) / 3); }  // 3 across, pager scrolls the rest
+}
+
+// ── Shared pager ────────────────────────────────────────────────────────────
+.re-pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--re-border);
+}
+.re-pager__count { margin: 0; color: var(--re-muted); font-size: 1.25rem; font-weight: 500; span { color: var(--re-text); } }
+.re-pager__btns { display: flex; gap: 10px; }
+.re-pager__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  background: transparent;
+  border: 1px solid var(--re-border);
+  border-radius: 69px;
+  color: var(--re-text);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+
+  svg { width: 26px; height: 26px; }
+  &--next { background: var(--re-surface); }
+  &:hover { border-color: var(--re-primary); }
+}
+.re-pager__ico--prev { transform: rotate(180deg); }
