@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 // dist/.vite/manifest.json and enqueues the hashed files.
 // `base` must match the theme's public dist/ URL so asset references resolve.
 export default defineConfig({
-  base: '/real-estate/wp-content/themes/realestate/dist/',
+  base: './',
   build: {
     outDir: 'dist',
     emptyOutDir: true,
