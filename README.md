@@ -120,10 +120,6 @@ Handled entirely in the theme (`inc/seo.php`) — no plugin required:
 - JSON-LD `@graph`: `Organization` (+ logo), `WebSite` (+ `SearchAction`), `FAQPage`, `Product`/`Offer` on property pages (price, beds/baths/area/location), `BreadcrumbList`.
 - WordPress core **XML sitemap** (`/wp-sitemap.xml`), **`llms.txt`** for AI answer engines, and a **Site Icon**.
 
-## License
-
-GPL-2.0-or-later. Design based on the "Real Estate Business Website UI Template — Dark Theme" (Produce UI, Figma Community).
-
 ## Author
 
 **amr99osama** — https://github.com/amr99osama
