@@ -5,6 +5,7 @@
 # Docs, plans, references, audits, dev tooling — not part of the shipped theme
 /docs/
 *.md
+!README.md
 
 # Figma raw exports (source material, not runtime assets)
 /assets/figma-export/
